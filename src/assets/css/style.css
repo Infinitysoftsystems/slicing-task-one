@@ -1,0 +1,42 @@
+body{font-family: Poppins, sans-serif;font-weight:300;font-size:14px;color:#2e4762;}
+strong{font-weight:600;}
+.bg-1{background-color:#2667c8;padding:1.14rem 1rem;}
+.bg-2{background-color:#3a7bdb;padding:1.35rem 1rem}
+.bg-3{background-color:#f3f4f5;}
+.bg-grey{background-color:#f3f4f5;}
+a, a:hover, a:focus{text-decoration:none}
+
+/*3 fonetelo icons */
+
+@font-face{font-family:fontello;src:url(../font/fontello.eot?25715516);src:url(../font/fontello.eot?25715516#iefix) format('embedded-opentype'),url(../font/fontello.woff2?25715516) format('woff2'),url(../font/fontello.woff?25715516) format('woff'),url(../font/fontello.ttf?25715516) format('truetype'),url(../font/fontello.svg?25715516#fontello) format('svg');font-weight:400;font-style:normal}[class*=" icon-"]:before,[class^=icon-]:before{font-family:fontello;font-style:normal;font-weight:400;speak:never;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-cog:before{content:'\e800'}.icon-arrows-cw:before{content:'\e801'}.icon-move:before{content:'\f047'}.icon-code:before{content:'\f121'}.icon-recycle:before{content:'\f1b8'}
+
+/*end fontelo */
+
+/*header css*/
+.navbar-brand, .navbar-brand:focus, .navbar-brand:hover{font-size:14px;color:#fff;padding:0px;}
+.navbar-brand img{width:30px;}
+.defultBTn, .defultBTn:focus,.defultBTn:hover{background:transparent;border:1px solid transparent;outline:none}
+.navbar-nav .nav-item button, .reloadBtn, .resetBTn{transition: transform .5s;}
+.navbar-nav .nav-item button:focus, .navbar-nav .nav-item button:hover{transform: scale(1.2); border: 1px solid #497dcb; border-radius: 4px; box-shadow: 0 0 5px #23487f; background: #2667c8;}
+
+
+/*button css*/
+.reloadBtn, .reloadBtn:focus, .reloadBtn:hover{background:#edeef0;border:1px solid #c9cacf;color:#787883;outline:none !important;font-weight:40;font-size:13px;display: inline-block; padding:6px 8px 6px 6px;}
+.reloadBtn:focus, .reloadBtn:hover{transform: scale(1.04); border: 1px solid #787883; border-radius: 4px;  background: #787883;color:#fff}
+
+.resetBTn, .resetBTn:focus, .resetBTn:hover{background:#f3ebeb;border:1px solid #eeb7b0;color:#e6472c;outline:none !important;font-weight:40;font-size:13px;display: inline-block; padding:6px 8px 6px 6px;}
+.resetBTn:focus, .resetBTn:hover{transform: scale(1.04); border: 1px solid #e6472c; border-radius: 4px;  background: #e6472c;color:#fff}
+
+
+/* task tab css*/
+.taskTabs li{margin-bottom:11px;}
+.taskTabs li:last-child{margin-bottom:0px;}
+.taskTabs a{background:#fff;display:inline-block;padding:10px;color:#000000;box-shadow:0px 0 5px rgba(0, 0 ,0 , .10);border-left:5px solid #3a7bdb;transition: all .5s;}
+.taskTabs a:hover{box-shadow:1px 0rem 1rem rgb(0, 0, 0 , .10);background:#3a7bdb;color:#fff}
+
+
+
+
+@media only screen and (min-width:768px){
+.mainBox{height: calc(100vh - 64px);}
+}
