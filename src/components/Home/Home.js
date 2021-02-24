@@ -1,4 +1,4 @@
-import SidePanel from '../../ui-components/SidePanel';
+import Scheduler from '../../ui-components/Scheduler';
 import Header from '../../ui-components/Header';
 import thumb from '../../assets/img/thumb.jpg'
 
@@ -27,9 +27,9 @@ const Home = () => {
          </div>
       </div>
       {
-          //Sidepanel is also our reuable component and intetrated from ui-components
+          //Scheduler is also our reuable component and intetrated from ui-components
       }
-      <SidePanel />
+      <Scheduler />
     </div>
   </div>
   );
