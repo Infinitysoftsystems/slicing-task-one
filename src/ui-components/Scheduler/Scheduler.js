@@ -1,34 +1,9 @@
 // This is our dummy Scheduler design. It will be updated as er functional requirements.
 import React, { useState, useEffect } from "react";
 
-
-// var slots = {
-// 	30: 5,
-// 	60: 10,
-// 	90: 10,
-// 	120: 10,
-// 	150: 10,
-// 	180: 10,
-// 	210: 10,
-// 	240: 10,
-// 	270: 10,
-// 	300: 10,
-// 	330: 10,
-// 	360: 10,
-// 	390: 10,
-// 	320: 10,
-// 	450: 10,
-// 	480: 10,
-// 	510: 10,
-// 	540: 10,
-// 	570: 10,
-// 	600: 10,
-
-// }
-
 var minSlotTime = 30; //We are taking this to be a 30 min minimum Slot 
 var minSlotPercentage = 5; //We will be showing 10 Hours on the board so Minimum slot 600/30 = 20% => min slot will be  100/20 => 5 percante 
-var tasks = [
+var allTasks = [
 	{
 		id: 1,
 		title: "Task 1",
@@ -67,7 +42,7 @@ var tasks = [
 	}
 ]
 const Scheduler = () => {
-	const [tasks, setTasks] = useState(tasks);
+	const [tasks, setTasks] = useState(allTasks);
 	
 	return (
 		<div class="col-3 sidenav h-100">
