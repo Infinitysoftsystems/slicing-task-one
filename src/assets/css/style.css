@@ -21,20 +21,24 @@ a, a:hover, a:focus{text-decoration:none}
 
 
 /*button css*/
-.reloadBtn, .reloadBtn:focus, .reloadBtn:hover{background:#edeef0;border:1px solid #c9cacf;color:#787883;outline:none !important;font-weight:40;font-size:13px;display: inline-block; padding:6px 8px 6px 6px;}
+.reloadBtn, .reloadBtn:focus, .reloadBtn:hover{background:#edeef0;border:1px solid #c9cacf;color:#787883;outline:none !important;font-weight:400;font-size:13px;display: inline-block; padding:6px 8px 6px 6px;}
 .reloadBtn:focus, .reloadBtn:hover{transform: scale(1.04); border: 1px solid #787883; border-radius: 4px;  background: #787883;color:#fff}
 
-.resetBTn, .resetBTn:focus, .resetBTn:hover{background:#f3ebeb;border:1px solid #eeb7b0;color:#e6472c;outline:none !important;font-weight:40;font-size:13px;display: inline-block; padding:6px 8px 6px 6px;}
+.resetBTn, .resetBTn:focus, .resetBTn:hover{background:#f3ebeb;border:1px solid #eeb7b0;color:#e6472c;outline:none !important;font-weight:400;font-size:13px;display: inline-block; padding:6px 8px 6px 6px;}
 .resetBTn:focus, .resetBTn:hover{transform: scale(1.04); border: 1px solid #e6472c; border-radius: 4px;  background: #e6472c;color:#fff}
 
 
 /* task tab css*/
-.taskTabs li{margin-bottom:11px;}
-.taskTabs li:last-child{margin-bottom:0px;}
-.taskTabs a{background:#fff;display:inline-block;padding:10px;color:#000000;box-shadow:0px 0 5px rgba(0, 0 ,0 , .10);border-left:5px solid #3a7bdb;transition: all .5s;}
+.taskTabs div{margin-bottom:11px;}
+.taskTabs div:last-child{margin-bottom:0px;}
+.taskTabs a{background:#fff;padding:10px;color:#000000;box-shadow:0px 0 5px rgba(0, 0 ,0 , .10);border-left:5px solid #3a7bdb;transition: all .5s;}
 .taskTabs a:hover{box-shadow:1px 0rem 1rem rgb(0, 0, 0 , .10);background:#3a7bdb;color:#fff}
 
 
+/* width section */
+
+.timeDiv >  div{border-right:1px solid #dee2e6;}
+.timeDiv >  div:last-child{border-right:0px;}
 
 
 @media only screen and (min-width:768px){
