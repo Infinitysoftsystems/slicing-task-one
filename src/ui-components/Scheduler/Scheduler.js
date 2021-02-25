@@ -2,6 +2,8 @@ import { useContext } from 'react';
 import { useDrop } from 'react-dnd';
 import { ItemTypes } from '../../utils/ItemTypes';
 import { TaskContext } from '../Container/Container';
+import Task from '../Task';
+
 
 //We are taking this to be a 30 min minimum Slot 
 var minSlotTime = 30;
@@ -42,39 +44,40 @@ const Scheduler = ({ data, tasks }) => {
 
 	const [{ canDrop, isOver }, drop] = useDrop(() => ({
 		accept: ItemTypes.TASK,
-		drop: (item, monitor) => (
+		drop: (item, monitor) => {
+			debugger;
 			markAsScheduled(item.task.id, data.id)
 			// { name: 'Scheduler' + data.id }
-		),
+		},
 		collect: (monitor) => ({
 			isOver: monitor.isOver(),
 			canDrop: monitor.canDrop(),
 		}),
 	}));
 
-return (
-	<div class="col-12 border-bottom">
-		<div class="row">
-			<div class="col-2 py-2">
-				{data.title}
+	return (
+		<div class="col-12 border-bottom">
+			<div class="row">
+				<div class="col-2 py-2">
+					{data.title}
+				</div>
+				<div class="col-10 text-center border-left  border-right  py-2 p-0"
+					ref={drop}
+					role={'Scheduler' + data.id}
+					style={{ position: 'relative' }}>
+					{tasks.map((task, index) => {
+						var taskPillwidth = (task.timeInMinutes / minSlotTime) * minSlotPercentage;
+						// offset will be how much space we will have to leave since the start
+						var taskStartIndex = slots.indexOf(task.startTime);
+						var taskOffset = taskStartIndex * minSlotPercentage;
+						return <Task data={task} isResheduled={true}
+							customStyle={{ taskPillwidth, taskOffset }} ></Task>
+
+					})}
+				</div>
 			</div>
-			<div class="col-10 text-center border-left  border-right  py-2 p-0" ref={drop} role={'Scheduler' + data.id}>
-				{tasks.map((task, index) => {
-					var taskPillwidth = (task.timeInMinutes / minSlotTime) * minSlotPercentage;
-					// offset will be how much space we will have to leave since the start
-					var taskStartIndex = slots.indexOf(task.startTime) + 1;
-					var taskOffset = taskStartIndex * minSlotPercentage;
-					return <div>
-						<div style={{ width: taskOffset + '%', display: 'inline' }}></div>
-						<div style={{ width: taskPillwidth + '%', height: 20, border: '1px solid', display: 'inline' }}>
-							{task.title}
-						</div>
-					</div>
-				})}
-			</div>
-		</div>
-	</div >
-);
+		</div >
+	);
 };
 
 export default Scheduler

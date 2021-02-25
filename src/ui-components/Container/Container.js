@@ -1,5 +1,5 @@
 // This is our dummy Scheduler design. It will be updated as er functional requirements.
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, useCallback, createContext } from "react";
 import Task from "../Task";
 import Scheduler from "../Scheduler";
 
@@ -13,7 +13,7 @@ var allTasks = [
 		timeInHours: 2,
 		timeInMinutes: 120,
 		isScheduled: true,
-		startTime: 600, //Taking start hour in minutues of the day
+		startTime: 990, //Taking start hour in minutues of the day
 		schedulerGroup: 2,
 		position: {
 			x: 30,
@@ -69,14 +69,23 @@ const Container = () => {
 		setTasksList(tasksList.filter((task, index) => task.id !== taskId).concat(task));
 	}
 
+	function resetScheduler(e) {
+		e.preventDefault();
+		setTasksList(allTasks);
+	}
+
+	// const resetScheduler = useCallback(async () => {
+	// 	setTasksList(allTasks);
+	//   }, [tasksList])
+
 	return (
 		<TaskContext.Provider value={{ markAsScheduled }}>
 			<div class="row d-flex mainBox">
 
 				<div class="col-9 text-left bg-white h-100 px-0">
 					<div class="col-12 bg-3 py-2">
-						<button class="reloadBtn mr-3"><i class="demo-icon icon-arrows-cw"></i>RELOAD SCHEDULER</button>
-						<button class="resetBTn"><i class="demo-icon icon-recycle"></i>RESET DATABASE</button>
+						<button class="reloadBtn mr-3" onClick={() =>resetScheduler()}><i class="demo-icon icon-arrows-cw"></i>RELOAD SCHEDULER</button>
+						<button class="resetBTn" onClick={() =>resetScheduler()}><i class="demo-icon icon-recycle"></i>RESET DATABASE</button>
 					</div>
 
 					<div class="col-12 border border-left-0 bg-3">
@@ -106,7 +115,7 @@ const Container = () => {
 
 					{schedulerGroups.map((scheduler, index) => {
 						var schedulerTasks = tasksList.filter((task, index) => task.schedulerGroup === scheduler.id)
-						return <Scheduler data={scheduler} tasks={schedulerTasks}></Scheduler>
+						return <Scheduler data={scheduler} tasks={schedulerTasks} key={scheduler.id}></Scheduler>
 					})}
 					{/* */}
 
@@ -119,7 +128,7 @@ const Container = () => {
 					<div class="row">
 						{/* map */}
 						{tasksList.map((task, index) => {
-								return !task.isScheduled ? <Task data={task}></Task> : ''
+							return !task.isScheduled ? <Task data={task} key={task.id}></Task> : ''
 						})}
 					</div>
 
