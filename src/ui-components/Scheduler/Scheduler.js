@@ -64,7 +64,8 @@ const Scheduler = ({ data, tasks }) => {
 				<div class="col-10 text-center border-left  border-right  py-2 p-0"
 					ref={drop}
 					role={'Scheduler' + data.id}
-					style={{ position: 'relative' }}>
+					style={{ position: 'relative',
+					overflow:'hidden' }}>
 					{tasks.map((task, index) => {
 						var taskPillwidth = (task.timeInMinutes / minSlotTime) * minSlotPercentage;
 						// offset will be how much space we will have to leave since the start

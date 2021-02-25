@@ -25,8 +25,9 @@ var allTasks = [
 		title: "Task 2",
 		timeInHours: 1.5,
 		timeInMinutes: 90,
-		isScheduled: false,
-		startTime: 0, //Taking start hour in minutues of the day
+		isScheduled: true,
+		startTime: 540, //Taking start hour in minutues of the day
+		schedulerGroup: 3,
 		position: {
 			x: undefined,
 			y: undefined
@@ -35,15 +36,56 @@ var allTasks = [
 	{
 		id: 3,
 		title: "Task 3",
-		timeInHours: 1,
+		timeInHours: 2,
 		timeInMinutes: 120,
+		isScheduled: true,
+		startTime: 720, //Taking start hour in minutues of the day
+		schedulerGroup: 5,
+		position: {
+			x: undefined,
+			y: undefined
+		}
+	},
+	{
+		id: 4,
+		title: "Task 4",
+		timeInHours: 6,
+		timeInMinutes: 360,
 		isScheduled: false,
 		startTime: 0, //Taking start hour in minutues of the day
+		schedulerGroup: undefined,
+		position: {
+			x: undefined,
+			y: undefined
+		}
+	},
+	{
+		id: 5,
+		title: "Task 5",
+		timeInHours: 3,
+		timeInMinutes: 180,
+		isScheduled: false,
+		startTime: 0, //Taking start hour in minutues of the day
+		schedulerGroup: undefined,
+		position: {
+			x: undefined,
+			y: undefined
+		}
+	},
+	{
+		id: 6,
+		title: "Task 6",
+		timeInHours: 3.5,
+		timeInMinutes: 210,
+		isScheduled: false,
+		startTime: 0, //Taking start hour in minutues of the day
+		schedulerGroup: undefined,
 		position: {
 			x: undefined,
 			y: undefined
 		}
 	}
+	
 ]
 var schedulerGroups = [{
 	id: 1,
@@ -56,8 +98,21 @@ var schedulerGroups = [{
 }, {
 	id: 3,
 	title: 'Audi',
+	tasks: [2]
+}, {
+	id: 4,
+	title: 'Hyundai',
 	tasks: []
-}]
+}, {
+	id: 5,
+	title: 'Kia',
+	tasks: [3]
+}, {
+	id: 6,
+	title: 'MG',
+	tasks: []
+}
+]
 const Container = () => {
 	const [tasksList, setTasksList] = useState(allTasks);
 
@@ -70,8 +125,9 @@ const Container = () => {
 	}
 
 	function resetScheduler(e) {
-		e.preventDefault();
-		setTasksList(allTasks);
+		// e.preventDefault();
+		// debugger
+		// setTasksList(allTasks);
 	}
 
 	// const resetScheduler = useCallback(async () => {
@@ -84,8 +140,8 @@ const Container = () => {
 
 				<div class="col-9 text-left bg-white h-100 px-0">
 					<div class="col-12 bg-3 py-2">
-						<button class="reloadBtn mr-3" onClick={() =>resetScheduler()}><i class="demo-icon icon-arrows-cw"></i>RELOAD SCHEDULER</button>
-						<button class="resetBTn" onClick={() =>resetScheduler()}><i class="demo-icon icon-recycle"></i>RESET DATABASE</button>
+						<button class="reloadBtn mr-3" onClick={(e) =>resetScheduler(e)}><i class="demo-icon icon-arrows-cw"></i>RELOAD SCHEDULER</button>
+						<button class="resetBTn" onClick={(e) =>resetScheduler(e)}><i class="demo-icon icon-recycle"></i>RESET DATABASE</button>
 					</div>
 
 					<div class="col-12 border border-left-0 bg-3">
