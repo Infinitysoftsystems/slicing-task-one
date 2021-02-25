@@ -19,11 +19,11 @@ const Task = ({ data, isResheduled, customStyle }) => {
 	}));
 	const opacity = isDragging ? 0.4 : 1;
 	return (
-		<div class="col-12  taskTabs py-3" ref={drag} role={ItemTypes.TASK}>
+		<div class="col-12  taskTabs py-4" ref={drag} role={ItemTypes.TASK}>
 			{data.isScheduled && isResheduled && <div>
-				<div style={{
+				<div className="taskBtn" style={{
 					width: customStyle.taskPillwidth + '%',
-					height: 20,
+					
 					border: '1px solid',
 					display: 'inline',
 					position: 'absolute',
@@ -32,7 +32,7 @@ const Task = ({ data, isResheduled, customStyle }) => {
 					{data.title}
 				</div></div>}
 			{!data.isScheduled &&
-				<div >
+				<div className="taskRtBtn">
 					<a href="javascript:void();" class="d-flex justify-content-between">
 						<span class="taskInfo"> {data.title}</span>
 						<span class="timeLaps font-weight-bold">{data.timeInHours}</span>

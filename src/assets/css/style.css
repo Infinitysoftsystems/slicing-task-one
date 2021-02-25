@@ -35,11 +35,16 @@ a, a:hover, a:focus{text-decoration:none}
 .taskTabs a:hover{box-shadow:1px 0rem 1rem rgb(0, 0, 0 , .10);background:#3a7bdb;color:#fff}
 
 
+.taskBtn{border-radius:4px;cursor:pointer; background:#2667c8;color:#fff;box-shadow:0px 0 5px rgba(0, 0 ,0 , .10);border:1px solid #fff; padding-top: 10px; padding-bottom: 10px;top:0px;}
+.taskBtn:hover{ background:#174fa3;}
+
 /* width section */
 
 .timeDiv >  div{border-right:1px solid #dee2e6;}
 .timeDiv >  div:last-child{border-right:0px;}
 
+.sidenav .col-12.taskTabs.py-4{padding:.5rem 1rem!important;}
+.sidenav .col-12.taskTabs.py-4:first-child{padding-top:1.5rem!important;}
 
 @media only screen and (min-width:768px){
 .mainBox{height: calc(100vh - 64px);}
